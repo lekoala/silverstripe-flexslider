@@ -1,0 +1,6 @@
+---
+Name: flexslider
+---
+FlexsliderSlide:
+  animaton: 'slide'
+  image_width: 1200
