@@ -3,7 +3,7 @@ SilverStripe FlexSlider module
 
 This module provide all the requirements to use FlexSlider 2.6 in your website.
 
-Use the following code in your page
+Use the following code in your page:
 
     private static $has_many = array(
         'Slides' => 'FlexSliderSlide'
@@ -17,9 +17,28 @@ Use the following code in your page
         return $fields;
     }
 
-And simply require the slider in your template
+And simply require the slider in your template:
 
     <% include FlexSlider %>
+
+Full screen slider
+----------------------------------
+
+For a nice full screen slider, images must be set as background. You can use
+this in your template instead:
+
+    <% include FlexSliderBackground %>
+
+Make sure to have the following css:
+
+    html, 
+    body {
+      height: 100%;
+      min-height: 100%;
+    }
+
+The default css has been updated to support fullscreen with the flexslider-fullscreen
+class.
 
 Manually trigger requirements
 ----------------------------------

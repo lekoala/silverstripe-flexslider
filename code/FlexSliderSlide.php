@@ -53,7 +53,7 @@ class FlexSliderSlide extends DataObject
     /**
      * Require files
      */
-    static function requirements()
+    static function requirements($customOpts = array())
     {
         $config    = self::config();
         $animation = $config->animation;
@@ -67,7 +67,9 @@ class FlexSliderSlide extends DataObject
         Requirements::javascript('flexslider/javascript/jquery.flexslider-min.js');
 
         $opts = $config->default_opts ? $config->default_opts : [];
-        
+
+        $opts = array_merge($opts,$customOpts);
+
         if (!$config->custom_init) {
             Requirements::customScript('$(window).load(function() {$(\'.flexslider\').flexslider('.json_encode($opts).');});');
         }
@@ -77,6 +79,14 @@ class FlexSliderSlide extends DataObject
     {
         self::requirements();
         return $this->renderWith(__CLASS__);
+    }
+
+    function MeBackground()
+    {
+        self::requirements(array(
+            'smoothHeight' => false
+        ));
+        return $this->renderWith(__CLASS__.'Background');
     }
 
     function SlideClass()
