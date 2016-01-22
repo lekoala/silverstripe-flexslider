@@ -1,6 +1,11 @@
 ---
 Name: flexslider
 ---
-FlexsliderSlide:
-  animaton: 'slide'
-  image_width: 1200
+FlexSliderSlide:
+  custom_styles: false
+  custom_init: false
+  default_opts:
+    animation: 'fade'
+    smoothHeight: true
+    pauseOnHover: true
+  image_width: 0
