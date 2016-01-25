@@ -99,7 +99,7 @@ class FlexSliderSlide extends DataObject
 
     function HasContent()
     {
-        return $this->Title || $this->Description;
+        return $this->Title || $this->Content;
     }
 
     function ResizedImage()
